@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>main_page</title>
+
+    <link rel="stylesheet" href="/css/common/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-hWO6mIzRdutQzLZ5a+W8VGdL5WS3I5Xw2yyU7j60paz+1XS0b1TE1l5U0Gpqm49b" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/69a462bb6c.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    
+    <th:block th:replace="~{common/header}"></th:block>
+
+    <th:block th:replace="~{common/leftSide}"></th:block>
+
+	<th:block th:replace="~{common/rightSide}"></th:block>
+    
+    <th:block th:if="${session.loginMember}">
+	    <input type="hidden" id="H_memberNo" th:value="${session.loginMember.memberNo}">
+	</th:block>
+    
+
+    <main>
+    <section class="main_body">
+        <div class="user_boxT" id="user_boxT">
+       
+       		<th:block th:if="${session.loginMember}">
+	            <div class="user_post">
+	                <div class="post">
+	                    <div class="post_head">
+	                        <div class="propile">
+	                            <img th:src="${session.loginMember.profileImage}">
+	                        </div>
+	                        <h1 id="user01" th:text="${session.loginMember.memberNickname}">surfing</h1>
+	                    </div>
+	                    <div class="post_content" id="postContentInput">
+	                             <h1>서핑에 오신것을 환영합니다.</h1>
+	                             <img th:src="@{/common/images/profile/ccc.jpg}">                       
+	                    </div>
+	                </div>
+	                <div class="comment">
+	                    <div class="comment_left">
+	                        <i class="fa-solid fa-heart" id="heartX" ></i>
+	                    </div>
+	                    <div class="comment_right">
+	                        <a>하트수</a>
+	
+	                        <a>조회수</a>
+	                   
+	                        <a>댓글수</a>
+	                        <button class="commentBtn" data-post-id="data-post-id">댓글달기</button>
+	                    </div>
+	                </div>
+	            </div> 
+			</th:block>
+      
+			<!-- 모달 -->
+			<div id="commentModalXC" class="modalXC">
+			  <div class="modal-contentXC">
+			    <div class="left-content">
+			      <!-- 이미지 또는 동영상 -->
+			      <div class="post-media">
+					  <img src="" alt="post Imgae">
+				  </div>
+			    </div>
+			    <div class="right-content">
+			      <!-- 프로필 이미지 -->
+			      <label class="right-head">
+					   <div class="profile-image">
+					        <img src="path_to_profile_image.jpg" alt="Profile Image">
+					      </div>
+					      <!-- 회원 아이디 -->
+					      <div class="user-id">
+					        <span>User123</span>
+				      </div>
+				      <span class="closeXC">&times;</span>
+				  </label>
+			      <!-- 텍스트 내용 -->
+			      <div class="post-text"></div>
+			      <!-- 하트 수와 댓글 수 -->
+			      <div class="post-stats">
+				        <div class="icons">
+				        <span class="heartCount"></span>
+				          <i class="fa-solid fa-heart"></i> <!-- 하트 아이콘 -->
+				        <span class="commentsCount"></span>
+				          <i class="fa-solid fa-comment"></i> <!-- 댓글 아이콘 -->
+				        </div>
+				        <button id="commentInputBtn" class="commentInputBtn">댓글 입력</button>
+			      </div>
+			      <!-- 댓글 목록 -->
+			      <!-- 댓글 입력창 및 버튼 -->
+				<div class="commentListXC">
+				  <!-- 작은 댓글 입력창과 입력 버튼 -->
+				  <div class="commentInputSection">
+				    <textarea class="commentInput" placeholder="댓글을 입력하세요"></textarea>
+				    <button class="commentSubmitBtn">입력</button>
+				  </div>
+				  <div class="commentList">
+					  
+				  </div>
+				  <!-- 여기에 댓글 목록이 표시됩니다 -->
+				</div>
+			    </div>
+			  </div>
+			  
+			  
+		       
+                
+                
+                
+        	</div>
+        </section>
+    </main>
+
+    
+    <script th:src="@{/js/common/main.js}"></script>
+
+    
+</body>
+</html>

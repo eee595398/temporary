@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>아이디/비밀번호 찾기</title>
+    <link rel="stylesheet" th:href="@{/css/member/searchIdPw.css}">
+</head>
+<body>
+    <div id="logos">
+        <img id="logo" th:src="@{/images/20231114115318_93362.png}">
+        <p id="name">Surfing</p>
+    </div>
+
+    <div id="searchTitle">
+        <p id="searchIdPw">아이디 찾기/비밀번호 변경</P>
+        <hr id="headHr">
+    </div>
+
+    <section id="side">
+		<form id="idForm">
+			
+        	<div id="leftSide">
+				
+           		<div id="idTitleBox">
+               		<p id="idTitle">아이디 찾기</p>        
+           		</div>
+            
+	            <fieldset class="searchId">
+	
+	                <div class="inputBox">
+						
+						<label class="labelBox" for="idForPhone">
+	                        <input type="radio" id="idForPhone" value="idForPhone" name="searchGroup" checked> 전화번호
+	                    </label>
+						
+	                    <dl>
+	                        <dt class="idFirstDt">
+	                            <input type="text" id="idPhoneName" placeholder="이름">
+	                        </dt>
+	                        <dt class="idSecondDt">
+	                            <input type="text" id="idPhoneTel" placeholder="전화번호">
+	                            <button type="button" class="sendAuth">인증번호 받기</button>
+	                        </dt>
+	                        <dd class="idFristDd">
+	                            <input type="text" id="idPhoneAuthNum" placeholder="인증번호">
+	                            <button type="button" class="checkAuth">인증번호 확인</button>
+	                        </dd>
+	                    </dl>
+	                    
+	                    <button class="searchBtn" >찾기</button>
+	                        
+	                </div>
+	
+	        
+	                <hr class="inputHr">           
+	                    
+	                    <div class="inputBox">
+							
+	                            <label class="labelBox" for="idForEmail">
+	                                <input type="radio" id="idForEmail" value="idForEmail" name="searchGroup"> 이메일
+	                            </label>
+	                        
+	                        <dl>
+		                        <dt class="idFirstDt">
+		                            <input type="text" disabled id="idEmailName" placeholder="이름">
+		                        </dt>
+		                        <dt class="idSecondDt">
+		                            <input type="text" disabled id="idEmailTel" placeholder="전화번호">
+		                            <button type="button" disabled class="sendAuth">인증번호 받기</button>
+		                        </dt>
+		                        <dd class="idFristDd">
+		                            <input type="text" disabled id="idEmailAuthNum" placeholder="인증번호">
+		                            <button type="button" disabled class="checkAuth">인증번호 확인</button>
+		                        </dd>
+	                        </dl>
+	                        
+	                        <button class="searchBtn" disabled>찾기</button>
+	                        
+	                    </div>
+	
+	            </fieldset>
+            
+            
+        </div>
+    
+        <div id="rightSide">
+            <div id="idTitleBox">
+                <p id="pwTitle">비밀번호 변경</p>
+                
+            </div>
+            
+  
+                <fieldset class="searchId">
+                    
+                   
+                    <div class="inputBox">
+						
+	                        <label class="labelBox" for="pwForPhone">
+	                            <input type="radio" id="pwForPhone" value="pwForPhone" name="searchGroup"> 전화번호
+	                        </label>
+                        
+                        <dl>
+	                        <dt class="idFirstDt">
+	                            <input type="text" disabled id="pwPhoneName" placeholder="이름">
+	                        </dt>
+	                        <dt class="idSecondDt">
+	                            <input type="text" disabled id="pwPhoneTel" placeholder="전화번호">
+	                            <button type="button" disabled class="sendAuth">인증번호 받기</button>
+	                        </dt>
+	                        <dd class="idFristDd">
+	                            <input type="text" disabled id="pwPhoneAuthNum" placeholder="인증번호">
+	                            <button type="button" disabled class="checkAuth">인증번호 확인</button>
+	                        </dd>
+                        </dl>
+                        
+                        <button class="searchBtn" disabled>찾기</button>
+                        
+                    </div>                    
+            
+                    <hr class="inputHr">                   
+                   
+                    <div class="inputBox">
+						
+                        <label class="labelBox" for="pwForEmail">
+                            <input type="radio" id="pwForEmail" value="pwForEmail" name="searchGroup"> 이메일
+                        </label>
+                        
+                        <dl>
+	                        <dt class="idFirstDt">
+	                            <input type="text" disabled id="pwEmailName" placeholder="이름">
+	                        </dt>
+	                        <dt class="idSecondDt">
+	                            <input type="text" disabled id="pwEmailTel" placeholder="전화번호">
+	                            <button type="button" disabled class="sendAuth">인증번호 받기</button>
+	                        </dt>
+	                        <dd class="idFristDd">
+	                            <input type="text" disabled id="pwEmailAuthNum" placeholder="인증번호">
+	                            <button type="button" disabled class="checkAuth">인증번호 확인</button>
+	                        </dd>
+                        </dl>
+                        
+                        <button class="searchBtn" disabled>찾기</button>
+                        
+                    </div>
+                    
+                    
+                </fieldset>
+            </form>
+        </div>
+    </section>
+    <div id="back">
+        <a th:href="@{/loginPage}" id="backBtn">돌아가기</a>
+    </div>
+
+	<script th:src="@{/js/member/searchIdPw.js}"></script>
+</body>
+</html>

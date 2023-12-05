@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<!-- namespace를 Mapper 인터페이스로 지정 -->
+<mapper namespace="team.gsk.project.chatting.model.dao.RoomMakingMapper">
+	
+	<resultMap type="Chatting" id="chatting_rm">
+		<result property="roomNo" column="ROOM_NO" />
+		<result property="roomName" column="ROOM_NAME" />
+		<result property="roomIntrudece" column="ROOM_INTRUDECE" />
+		<result property="roomPersonnel" column="ROOM_PERSONNEL" />
+		<result property="roomManager" column="ROOM_MANAGER" />	
+		<result property="roomPwd" column="ROOM_PWD" />		
+		<result property="roomImg" column="ROOM_IMG" />
+		<result property="tagName" column="TAG_NAME" />
+		
+		<!--해소테이블 컬럼-->
+		<result property="memberNo" column="MEMBER_NO" />
+		<result property="tagNo" column="TAG_NO" />
+	</resultMap>
+	
+	
+		<resultMap type="Chatting" id="tag_rm">
+				<result property="tagNo" column="TAG_NO" />
+		</resultMap>
+	
+	
+	<!--채팅방 만들기-->
+	<insert id="roomMaking" >
+		INSERT INTO ROOM_GROUP (ROOM_NO,ROOM_NAME,ROOM_INTRUDECE,ROOM_PERSONNEL,
+		ROOM_MANAGER,ROOM_PWD,ROOM_IMG) VALUES
+		(ROOM_NO_SEQ.NEXTVAL,#{roomName},#{roomIntrudece},#{roomPersonnel},#{roomManager},#{roomPwd},#{roomImg})
+	</insert>
+	
+	<!--만들어진 채팅방 번호 가져오기 -->
+	<select id="roomNumber" >
+		SELECT ROOM_NO_SEQ.CURRVAL FROM DUAL
+	</select>
+		
+	<!--태그 번호 찾기-->
+<!--	<select id="tagNumber" parameterType="java.util.List" >
+	    SELECT TAG_NO FROM ROOM_TAG WHERE TAG_NAME IN
+	    <foreach collection='array' index="index" item="item" open="(" separator="," close=")">
+	           #{item}
+	    </foreach>
+	</select>-->
+
+	<!--태그 넣기 -->
+	<insert id="addTag" parameterType="java.util.List">
+    	<foreach collection="list" item="item" index="index" open="INSERT ALL " separator=" " close="SELECT * FROM DUAL">
+	        INTO TAG_ROOM_NO (ROOM_NO, TAG_NO)
+	        VALUES
+	        (#{item.roomNo},(SELECT TAG_NO FROM ROOM_TAG WHERE TAG_NAME=#{item.tagName})
+	        )
+	    </foreach>
+	</insert>
+	
+	
+	<!--방장 넣기-->
+	<insert id="addMember">
+		INSERT INTO MEMBER_ROOM_NO mrn (ROOM_NO,MEMBER_NO) VALUES(#{roomNo},#{memberNo})
+	</insert>
+	
+				
+</mapper>
+

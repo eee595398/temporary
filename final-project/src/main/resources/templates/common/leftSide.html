@@ -1,0 +1,65 @@
+
+<link rel="stylesheet" th:href="@{/css/common/leftSide.css}">
+
+ <aside class="left">
+
+        <div class="menu">
+           <nav>
+			    <a th:if="${session.loginMember == null}" href="#" onclick="alert('로그인 후 이용해주세요'); return false;">
+			        <i id="sideIcon" class="fa-regular fa-user" style="color: #053d9e;"></i>
+			        Profile
+			    </a>
+			    <a th:if="${session.loginMember != null}" th:href="@{/profile}">
+			        <i id="sideIcon" class="fa-regular fa-user" style="color: #053d9e;"></i>
+			        Profile
+			    </a>
+			</nav>
+            <nav>
+				 <a th:if="${session.loginMember == null}" href="#" onclick="alert('로그인 후 이용해주세요'); return false;">
+           	   	    <i id="sideIcon" class="fa-solid fa-user-group" style="color: #053d9e;"></i>
+           	   	    Follow					
+				</a>
+				<a th:if="${session.loginMember != null}" th:href="@{/follow}">
+           	   	    <i id="sideIcon" class="fa-solid fa-user-group" style="color: #053d9e;"></i>
+           	   	    Follow					
+				</a>
+            </nav>
+            <nav>
+				 <a th:if="${session.loginMember == null}" href="#" onclick="alert('로그인 후 이용해주세요'); return false;">
+	                <i id="sideIcon" class="fa-solid fa-envelope" style="color: #053d9e;"></i>
+	                Message				
+				</a>
+				<a th:if="${session.loginMember != null}" th:href="@{/chatting/chattinGroup}">
+	                <i id="sideIcon" class="fa-solid fa-envelope" style="color: #053d9e;"></i>
+	                Message				
+				</a>
+            </nav>
+            <nav>
+				 <a th:if="${session.loginMember == null}" href="#" onclick="alert('로그인 후 이용해주세요'); return false;">
+	                <i id="sideIcon" class="fa-regular fa-message" style="color: #053d9e;"></i>	
+	                chatting			
+				</a>
+					<a th:if="${session.loginMember != null}" th:href="@{/chatting/chattingchoose}">
+	                <i id="sideIcon" class="fa-regular fa-message" style="color: #053d9e;"></i>	
+	                chatting			
+				</a>
+            </nav>
+            
+        </div>
+        <div class="login_block">
+            <a href="/loginPage">
+			    <button class="w-btn w-btn-gra1" type="button">
+			        <span>로그인</span>
+			    </button>
+			</a>
+        </div>
+</aside>
+
+<script th:inline="javascript">
+    
+    /* Natural Template */
+    const message = /*[[${message}]]*/ "전달 받은 메세지";
+    // 타임리프 해석   값(자료형 알아서 해석)    사라짐(설명)
+
+    if(message != null) alert(message);
+</script>

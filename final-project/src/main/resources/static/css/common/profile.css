@@ -1,0 +1,314 @@
+body{
+    height: 1080px;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+a {
+    text-decoration: none; /* 밑줄 제거 */
+    color: #000; /* 링크 색상 변경 */
+}
+
+
+
+
+/* ///////////////////////////////////////////////////////////////////// */
+
+
+@media screen and (max-width: 900px) {
+    aside {
+        display: none; /* 화면이 작아지면 사이드바를 감춘다 */
+    }
+
+    main {
+        margin-left: 0; /* 사이드바가 없으므로 여백을 없앤다 */
+        width: 100%; /* 전체 너비로 확장 */
+    }
+}
+
+
+/* 사이드 */
+aside{
+    margin-top: 5%;
+    position: fixed;
+    height: 600px;
+    width: 10%;
+    float: left;
+    min-width: 200px;
+    
+    }
+    
+    .menu{
+        display: flex;
+        flex-direction: column;
+        height: 60%;
+    
+    
+    }
+    
+    #sideIcon {
+        font-size: 40px;
+        margin-top: 15px;
+        margin-left: 30%;
+        margin-bottom: 50px;
+    }
+
+
+
+    
+    .login_block{
+        height: 40%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+    }
+    
+
+    .w-btn-gra1 {
+        width: 180px;
+        height: 90px;
+        font-size: 2rem;
+        border-radius: 50px;
+        border: none;
+        background: linear-gradient(-1000deg, #33ccff 0%, #ff99cc 100%);
+        color: white;
+    }
+
+
+    main{
+        margin-left: 11%;
+        width: 88%;
+        height: auto;
+        background-color: #ffffff;
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        align-items: center;
+    }
+
+    .user_box {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        width: 65%;
+        margin-top: 100px;
+        margin-left: 5%;
+        height: auto;
+        margin-right: 250px;
+    }
+    
+
+	.proBox > label{
+    width: 90px;
+    height: 40px;
+    color: rgb(0, 0, 64);
+    font-size: 13px;
+    font-weight: bold;
+    background-color: rgb(255, 255, 255);
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+	align-items: center;
+	border: 2px solid rgb(0, 0, 1);
+	border-color: rgb(211, 211, 211);
+	}
+	
+	
+	.proBox > label:hover {
+	    cursor: pointer; /* 마우스 호버 시 포인터 모양으로 변경 */
+	    /* 다른 스타일링 */
+	}
+
+
+    
+    
+    #imageInput{ display: none;}
+    
+    
+	    input{
+	    width: 100%;
+	    height: 60%;
+	    outline: none;
+	    font-size: 1rem;
+	    border-radius: 20px;
+	    padding: 2% 6%;
+	    font-weight: bold;
+	    border: 1px solid #a5a1a1;
+	
+	}
+
+
+    .proBox {
+        display: flex;
+        justify-content: space-between;
+        width: auto;
+    }
+
+    .profile_img {
+        width: 700px;
+        height: 600px;
+        border-radius: 50%; /* 반지름이 전체의 50%가 되면 원 모양이 됩니다 */
+        overflow: hidden; /* 원 모양의 영역을 벗어나는 이미지를 숨김 */
+        box-sizing: border-box;
+        margin-left: 14%;
+    }
+    
+    .profile_img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover; /* 이미지가 컨테이너에 맞게 꽉 채워지도록 설정 */
+    }
+
+    .proBtn {
+        height: 40px;
+        width: 80px;
+        border-radius: 20px;
+        border: none;
+        background-color: rgb(17, 17, 102);
+        font-weight: bolder;
+        color: white;
+        margin: 0;
+    }
+
+    hr {
+        width: 100%;
+        margin: 0;
+        border: none; /* 기본 테두리 제거 */
+        border-top: 1.5px solid black;
+    }
+
+    #p1 {
+        margin-top: 50px;
+        margin-right: 80%;
+        margin-bottom: 0;
+        font-size: 20px;
+        font-weight: 550;
+    }
+
+    #t1 {
+        margin-top: 20px;
+        margin-right: 80%;
+        font-weight: bold;
+        color: rgb(0, 191, 255);
+    }
+
+    .proPwBox {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .pwInput {
+        width: 500px;
+        height: 20px;
+	    outline: none;
+	    font-size: 1rem;
+	    border-radius: 20px;
+	    padding: 2% 6%;
+	    font-weight: bold;
+	    border: 1px solid #a5a1a1;
+    }
+
+    #p3 {
+        margin-top: 50px;
+        margin-left: 3%;
+    }
+
+    #p2 {
+        margin-top: 20px;
+        margin-left: 3%;
+    }
+
+    .proBtn2 {
+        height: 50px;
+        width: 100px;
+        border-radius: 20px;
+        border: none;
+        background-color: rgb(17, 17, 102);
+        font-weight: bolder;
+        color: white;
+        margin-top: 5%;
+        margin-left: 40%;
+    }
+
+    .nickBox {
+        display: flex;
+        justify-content: center;
+    }
+
+    .nick {
+        margin-right: 40%;
+        font-weight: bold;
+        color: rgb(0, 191, 255);
+    }
+
+    .nick1 {
+        margin-top: 2%;
+        margin-right: 35.5%;
+        margin-bottom: 1%;
+    }
+
+    #new_nick {
+        width: 450px;
+        height: 20px;
+	    outline: none;
+	    font-size: 1rem;
+	    border-radius: 20px;
+	    padding: 2% 6%;
+	    font-weight: bold;
+	    border: 1px solid #a5a1a1;
+	    margin-left: 5%;
+    }
+
+    .proBtn3 {
+        height: 50px;
+        width: 100px;
+        border-radius: 20px;
+        border: none;
+        background-color: rgb(17, 17, 102);
+        font-weight: bolder;
+        color: white;
+        margin-top: 5%;
+        margin-left: 41%;
+    }
+    
+    #deleteImage{
+    position: absolute;
+    top: 0px;
+    cursor: pointer;
+
+}
+
+    #by_sns {
+        height: 50px;
+        width: 150px;
+        border-radius: 20px;
+        border: none;
+        background-color: rgb(230, 230, 255);
+        font-weight: bolder;
+        color: rgb(255, 0, 0);
+        margin-top: 25%;
+        margin-bottom: 20%;
+    }
+    
+    
+  /* -------------------------------------------*/
+  
+  /* 모달 전체 배경 */
+  
+  #myModalXT {
+    z-index: 9999; /* 다른 요소보다 위에 나타나도록 높은 값 설정 */
+    position: fixed; /* 고정 위치 요소로 설정하여 화면 상에 고정 */
+    top: 50%; /* 화면의 중앙에 위치하도록 위쪽 여백 설정 */
+    left: 50%; /* 화면의 중앙에 위치하도록 왼쪽 여백 설정 */
+    transform: translate(-50%, -50%); /* 정확한 중앙 정렬을 위한 트랜스폼 */
+    width: auto; /* 모달의 가로 길이 */
+    height: auto; /* 모달의 세로 길이 */
+    background-color: #fff; /* 배경색 */
+    border: 1px solid #ccc; /* 테두리 스타일 */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2); /* 그림자 효과 */
+    padding: 20px; /* 내부 여백 */
+}
+  
+ 

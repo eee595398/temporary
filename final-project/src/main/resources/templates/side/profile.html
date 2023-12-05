@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>profile_page</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-hWO6mIzRdutQzLZ5a+W8VGdL5WS3I5Xw2yyU7j60paz+1XS0b1TE1l5U0Gpqm49b" crossorigin="anonymous">
+    <link rel="stylesheet" th:href="@{/css/common/profile.css}">
+    <script th:src="@{https://kit.fontawesome.com/69a462bb6c.js}" crossorigin="anonymous"></script>
+</head>
+<body>
+    
+ 	<th:block th:replace="~{common/header}"></th:block>
+
+    <th:block th:replace="~{common/leftSide}"></th:block>
+
+    <main>
+
+        <div class="user_box">
+            <a id="p1">프로필 사진</a>
+            <hr>
+            	<form th:action="@{profile}" th:object="${session.loginMember}" method="POST" name="myPageFrm" id="profileFrm" enctype="multipart/form-data">
+		            <nav class="proBox">
+		                <div class="profile_img">
+							
+							<!-- 프로필 이미지가 없으면 기본 이미지 -->
+		                    <img  th:unless="*{profileImage}" th:src="@{/common/images/profile/profile.jpg}" id="profileImage">
+		                    
+		                    <!-- 프로필 이미지가 있으면 저장된 이미지 -->
+		                    <img th:if="*{profileImage}" th:src="*{profileImage}" id="profileImage">
+		                    
+		                </div>
+		                <label for="imageInput">이미지 선택</label>
+		                <input  type="file" name="profileImage" id="imageInput" accept="image/*">
+		                <button class="proBtn" id="proBtn">변경</button>
+		            </nav>
+		    	</form>
+            <a id="p1">회원 아이디</a>
+            <hr>
+            <a id="t1" th:text="${session.loginMember.memberId}">회원의 아이디</a>
+            <a id="p1">비밀번호 변경</a>
+            <hr>
+            	<form th:action="@{changePw}" method="POST" name="myPageFrm" id="changePwFrm">
+		            <div class="proPwBox">
+		                <a id="p3">현재 비밀번호</a>
+		                <input class="pwInput" name="currentPw" id="currentPw" placeholder="your Pw">
+		                <a id="p2">변경 비밀번호</a>
+		                <input class="pwInput" name="newPw" id="newPw" placeholder="new Pw">
+		                <a id="p2">비밀번호 확인</a>
+		                <input class="pwInput" name="newPwConfirm" id="newPwConfirm" placeholder="new Pw">
+		                <button class="proBtn2">변경</button>
+		            </div>
+		    	</form>
+            <a id="p1">닉네임 변경</a>
+            <hr>
+            <nav class="nickBox">
+                <a>현재 닉네임 :</a><a class="nick" th:text="${session.loginMember.memberNickname}">user</a>
+            </nav>
+            <a class="nick1" >변경 닉네임</a>
+            	
+        	<form th:action="@{/nickName}" method="post">
+			    <input id="new_nick" placeholder="new NickName" name="memberNickname" maxlength="10">				
+			    <button type="submit" class="proBtn3" onclick="validateNickname()">변경</button>
+			</form>
+            	
+            <button id="by_sns">탈퇴하기</button>
+
+			<form th:action="@{secession}" method="POST" name="myPageFrm">
+				<div id="myModalXT" class="modalXT" style="display: none;">
+				    <div class="modal-contentXT" style="width: 300px; background-color: #f9f9f9; padding: 20px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+				        <span id="closeModalXT" class="close" style="float: right; cursor: pointer;">&times;</span>
+				        <h2 style="text-align: center; margin-bottom: 20px;">비밀번호 입력</h2>
+				        <input type="password" name="memberPw" id="memberPw" maxlength="30" placeholder="비밀번호를 입력하세요" style="width: 100%; padding: 10px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 4px;">
+				        <button onclick="processWithdrawal()" id="good_by" style="width: 100%; padding: 10px; background-color: #f44336; color: white; border: none; border-radius: 4px; cursor: pointer;">탈퇴</button>
+				    </div>
+				</div>				
+			</form>
+			
+			
+        </div>
+    </main>
+    
+    
+     <script th:src="@{/js/common/profile.js}"></script>
+
+    
+</body>
+</html>

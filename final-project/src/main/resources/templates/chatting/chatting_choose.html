@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>채팅방 고르기</title>
+    <link rel="stylesheet" th:href="@{/css/chatting/chatting_choose.css}">
+    <script src="https://kit.fontawesome.com/69a462bb6c.js" crossorigin="anonymous"></script>
+
+</head>
+<body>
+    <th:block th:replace="~{common/header}">헤드</th:block>	
+  
+	<th:block th:replace="~{common/leftSide}">사이드바</th:block>
+
+
+    <main>
+
+            <div class="chatting_choose">
+                <div class="chatting_title">
+                    채팅 선택 
+                </div>
+                <div class="chatting_body">
+                    <button type="submit" th:onclick="location.href='/chatting/groupSetting'" id="group_chat">그룹채팅</button>
+                    <button type="submit" th:onclick="location.href='/chatting/chattingRoom'" id="all_chat">전체채팅</button>
+                </div>
+            </div>
+
+    </main>
+
+
+
+</body>
+</html>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<!-- namespace를 Mapper 인터페이스로 지정 -->
+<mapper namespace="team.gsk.project.member.model.dao.MemberMapper">
+	
+	<resultMap type="Member" id="member_rm">
+		<id property="memberNo" column="MEMBER_NO" />
+		<result property="memberId" column="MEMBER_ID" />
+		<result property="memberPw" column="MEMBER_PW" />
+		<result property="memberName" column="MEMBER_NAME" />
+		<result property="memberTel" column="MEMBER_PHONE" />
+		<result property="memberNickname" column="MEMBER_NICKNAME" />
+		<result property="memberIntro" column="MEMBER_INTRO" />
+		<result property="profileImage" column="MEMBER_PROFILE" />		
+		<result property="coverImage" column="MEMBER_COVER_IMG" />		
+		<result property="enrollDate" column="MEMBER_ENROLL_DATE" />
+		<result property="deleteFlag" column="MEMBER_DELETE_FLAG" />
+		<result property="authority" column="AUTHORITY" />
+		<result property="memberEmail" column="MEMBER_EMAIL" />
+		<result property="memberBirth" column="MEMBER_BIRTH" />
+	</resultMap>
+	
+	<!-- 로그인 -->
+	<select id="login" resultMap="member_rm">
+		SELECT MEMBER_NO, MEMBER_ID, MEMBER_PW, MEMBER_NAME, MEMBER_PHONE, MEMBER_NICKNAME,
+		MEMBER_INTRO, MEMBER_PROFILE, MEMBER_COVER_IMG, MEMBER_DELETE_FLAG, AUTHORITY, MEMBER_BIRTH,
+		TO_CHAR(MEMBER_ENROLLDATE, 'YYYY"년" MM"월" DD"일" HH24"시" MI"분" SS"초"') AS MEMBER_ENROLLDATE
+		FROM "MEMBER"
+		WHERE MEMBER_DELETE_FLAG = 'N'
+		AND MEMBER_ID = #{memberId}
+	</select>
+	
+		<!-- 회원 가입 -->
+	<insert id="signUp">
+		INSERT INTO "MEMBER"
+		VALUES(SEQ_MEMBER_NO.NEXTVAL
+		, '${memberId}'
+		, '${memberPw}'
+		, '${memberName}'
+		, '${memberTel}'
+		, '${memberNickname}'
+		, null
+		, null
+		, null
+		, DEFAULT, DEFAULT, DEFAULT
+		, '${memberEmail}'
+		, '${memberBirth}')
+	</insert>
+	
+	<select id="memberId" resultType="string">
+		SELECT MEMBER_ID
+		FROM MEMBER
+		WHERE MEMBER_ID = #{memberId}
+	</select>
+	
+	<select id="profile" resultType="string">
+		SELECT MEMBER_PROFILE
+		FROM MEMBER
+		WHERE MEMBER_ID = #{memberId}
+	</select>
+
+</mapper>

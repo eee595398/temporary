@@ -1,0 +1,61 @@
+<link rel="stylesheet" th:href="@{/css/common/header.css}">
+
+
+<header>
+        <div class="logo_img">
+			<a th:href="@{/}">
+	            <img th:src="@{/common/images/Rectangle110.png}" id="logo">			
+			</a>
+        </div>
+
+        <a id="logoText" th:href="@{/}">Surfing</a>
+
+        <nav>
+            <form action="#">
+                <fieldset id="search">
+                    <input id="search_id" type="search" placeholder="검색" >
+                    <button>
+                        <img th:src="@{/common/images/Rectangle112.png}" id="search_icon">
+                    </button>
+                </fieldset>
+            </form>
+        </nav>
+
+        <div class="right_button">
+            <div>
+                <i id="bell" class="fa-solid fa-bell" style="color: #ffffff;"></i>
+            </div>
+            <div>
+                <button class="w-btn-neon2" type="button">
+                    업로드
+                </button>
+            </div>
+        </div>
+        
+        
+	<div id="myModal" class="modal">
+		    <div class="modal-content">
+		        <span class="close">&times;</span>
+		        <h2>게시글 작성</h2>
+		        <div class="modelPostContent" id="modalPostContent" contenteditable="true" placeholder="게시글 내용을 입력하세요"></div>
+		        <!-- 이미지 및 동영상 추가 입력란 -->
+		        <label for="imageInputXX" class="custom-file-upload" id="cfu">
+		            <span class="button-text">이미지</span>
+		            <input type="file" id="imageInputXX" accept="image/*" style="display: none;">
+		        </label>
+		        <label class="custom-file-upload" for="videoInput">
+		            <span class="button-text">동영상</span>
+		            <input type="file" id="videoInput" accept="video/*" style="display: none;">
+		        </label>
+		        <button class="xxx" onclick="createPost()">게시</button>
+		    </div>
+	</div>
+	
+	
+
+
+    </header>
+    	<script th:src="@{/js/common/header.js}"></script>
+      	
+
+		

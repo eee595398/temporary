@@ -1,0 +1,437 @@
+body{
+    height: 1080px;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+a {
+    text-decoration: none; /* 밑줄 제거 */
+    color: #000; /* 링크 색상 변경 */
+}
+
+
+
+
+/* ///////////////////////////////////////////////////////////////////// */
+
+
+
+    /* ////////////////////// */
+
+    .right {
+        right: 0;
+        left: auto;
+        float: right;
+        margin-top: 5%;
+        position: fixed;  
+        background-color: white;  
+        width: 15%;
+        height: 60%;
+        border-radius: 50px;
+        border: 1px solid #dfdddd;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        
+    }
+
+    #friend_name {
+        color: rgb(255, 153, 0);
+    }
+
+    .friend_post {
+        width: 85%;
+        height: 80%;
+        background-color: rgb(249, 248, 255);
+        display: flex;
+        flex-direction: column;
+
+        overflow-y: scroll; /* 항상 세로 스크롤을 나타나도록 설정 */
+        
+    }
+
+    .friend {
+        list-style-type: none; /* 리스트 스타일 제거 */
+        padding: 0; /* 내부 여백 제거 */
+    }
+
+    .friend li {
+        position: relative;
+        padding-left: 20px; /* 왼쪽 여백 설정 (점 크기 조절) */
+        margin-bottom: 10px; /* 각 항목 간격 조절 */
+    }
+
+    .friend li a {
+        text-decoration: none; /* 밑줄 제거 */
+        color: inherit; /* 부모 요소에서 상속한 색상 사용 */
+        cursor: pointer; /* 포인터 커서 사용 */
+        display: inline-block; /* 인라인 블록 요소로 변경하여 크기 조절 가능 */
+        padding: 5px; /* 내부 여백 설정 */
+    }
+
+    .friend li::before {
+        content: "•"; /* 점 모양 (•) 사용 */
+        color: #ccc; /* 점 색상 설정 */
+        font-size: 24px; /* 점 크기 조절 */
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    /*///////////////////*/
+
+    main{
+        margin-top: 0;
+        margin-left: 11%;
+        width: 89%;
+        height: 10000px;
+        background-color: #F2F6FF;
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        align-items: center;
+    }
+
+    .main_body {
+        margin-top: 0;
+        margin-left: 0;
+        height: 10000px;
+        width: 100%;
+        background-color: #F2F6FF;
+        display: flex;
+        justify-content: center;
+        height: auto;
+    }
+
+    .user_boxT {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        width: 1000px;
+        margin-top: 100px;
+        margin-right: 250px;
+        height: auto;
+    }
+
+    .user_post {
+        background-color: white;
+        width: 100%;
+        height: 650px;
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 50px;
+        min-width: 600px;
+        border: 1px solid #dfdfdf;
+        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.13);
+    }
+
+    .post {
+        width: 100%;
+        height: 90%;
+        background-color: white;
+        display: flex;
+        flex-direction: column;
+        padding: 0;
+    }
+
+    .post_head {
+        width: 100%;
+        height: 20%;
+        display: flex;
+        margin: 0;
+    }
+
+    .post_content {
+        height: 100%;
+        padding: 2%;
+        overflow: hidden;
+    }
+    
+    .post_content img {
+	    max-width: 100%;
+	    max-height: 100%;
+	    display: block;
+	}
+
+ .propile {
+    width: 10%;
+    height: 90%;
+    border-radius: 50%;
+    margin-left: 3%;
+    margin-top: 5px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    position: relative;
+    z-index: 1;
+}
+
+.propile img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+
+    #user01 {
+        margin-top: 5%;
+        margin-left: 2%;
+        font-size: 35px;
+        font-weight: 500;
+    }
+
+    .comment {
+        width: 100%;
+        height: 10%;
+        background-color: #7791BA;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .comment_left {
+        flex-basis: 15%;
+    }
+
+    .comment_right {
+        flex-basis: 85%;
+        display: flex;
+        justify-content: flex-end;
+    }
+
+
+    .commentBtn {
+        margin-left: 50px;
+        margin-right: 30px;
+        width: 130px;
+        border-radius: 50px;
+        border-width: 0;
+        box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        background-color: #DFE8FF;
+        font-size: 20px;
+        font-weight: 600;
+    }
+
+    #heart {
+        margin-left: 25%;
+        font-size: 65px;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        color: #feb4b4;
+    }
+    
+     #heartX {
+        margin-left: 25%;
+        font-size: 65px;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        color: #feb4b4;
+    }
+    
+
+    #heart:hover {
+        color: #ff0000;
+    }
+
+    .comment_right > a {
+        margin-top: 10px; /* 탑 마진 설정 */
+        margin-left: 20px;
+    }
+    
+    
+    /* 모달 --------------------------------------*/
+    
+    
+/* 모달 배경 */
+.modalXC {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.6); /* 배경색 조절 */
+}
+
+/* 모달 내용 */
+.modal-contentXC {
+  background-color: #fff; /* 모달 내용 배경색 */
+  margin: 1.5%;
+  padding: 20px;
+  border-radius: 8px; /* 모달 테두리를 부드럽게 */
+  width: 94.9%;
+  height: 89.5%;
+  max-width: 100%; /* 모달 최대 너비 제한 */
+  display: flex;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* 그림자 효과 */
+}
+
+/* 좌측 컨텐츠 영역 */
+.left-content {
+  width: 60%;
+  padding-right: 20px; /* 오른쪽 패딩 추가 */
+}
+
+.post-media {
+  width: 100%;
+  height: 100%; /* 이미지/동영상 높이 설정 */
+  background-color: #f0f0f0; /* 이미지/동영상 부분 배경색 */
+  border-radius: 6px; /* 모서리를 부드럽게 */
+  overflow: hidden;
+  
+}
+
+.post-media img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+
+/* 우측 컨텐츠 영역 */
+.right-content {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  padding-left: 20px; /* 좌측 패딩 추가 */
+}
+
+.right-head {
+	display: flex;
+}
+
+
+
+.profile-image {
+  width: 100px; /* 프로필 이미지 박스의 너비 설정 */
+  height: 100px; /* 프로필 이미지 박스의 높이 설정 */
+  border-radius: 50%; /* 둥근 형태로 프로필 이미지 박스 만들기 */
+  overflow: hidden; /* 넘치는 이미지를 가리기 위해 필요한 속성 */
+  border: 1px solid rgb(192, 192, 192);
+}
+
+.profile-image img {
+  width: 100%; /* 이미지를 div에 꽉 차게 설정 */
+  height: 100%; /* 이미지를 div에 꽉 차게 설정 */
+  object-fit: cover; /* 이미지를 div에 꽉 차게 설정하기 위한 속성 */
+}
+
+/* 텍스트 내용 */
+.post-text {
+  margin-top: 20px; /* 위쪽 마진 추가 */
+  font-size: 16px;
+  height: 30%;
+  border-top: 1px solid rgb(192, 192, 192);
+  border-radius: 15px;
+  
+}
+
+/* 사용자 이름 */
+.user-id {
+  font-size: 18px; /* 글꼴 크기 설정 */
+  margin-bottom: 10px; /* 아래쪽 간격 설정 */
+}
+
+.user-id span {
+  display: block; /* 줄 바꿈을 위해 블록 요소로 설정 */
+}
+
+/* 하트 수와 댓글 수 */
+.post-stats {
+  margin-top: 10px; /* 위쪽 마진 추가 */
+  display: flex;
+  align-items: center;
+}
+
+.post-stats span {
+  margin-right: 10px; /* 각 아이콘/텍스트 사이의 간격 설정 */
+}
+
+.icons {
+	display: flex;
+}
+
+.commentsCount {
+	margin-left: 40%;
+}
+
+
+
+
+/* 댓글 목록 */
+.commentListXC {
+  margin-top: 20px; /* 위쪽 마진 추가 */
+  border-top: 1px solid #ccc; /* 상단 테두리 추가 */
+  padding-top: 10px; /* 상단 패딩 추가 */
+  height: 100%;
+}
+
+.commentInputSection {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  display: none;/* 댓글 입력창 아래 여백 추가 */
+}
+
+.commentInput {
+  flex: 1;
+  height: 30px;
+  width: 88%;
+  padding: 5px;
+  margin-right: 10px; /* 입력창 오른쪽 여백 추가 */
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.commentSubmitBtn {
+  padding: 5px 10px;
+  background-color: #3498db;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.commentInputBtn {
+  margin-left: 79%;
+  padding: 5px 10px;
+  background-color: #3498db;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.commentList {
+	border: 1px solid rgb(192, 192, 192);
+	border-radius: 5px;
+	height: 89%;
+}
+
+.commentSubmitBtn:hover {
+  background-color: #2980b9;
+
+
+.commentItemXC {
+  border-bottom: 1px solid #ccc; /* 각 댓글 아이템 사이에 구분선 추가 */
+  margin-bottom: 10px; /* 각 댓글 아이템 사이의 간격 설정 */
+  padding-bottom: 10px; /* 하단 패딩 추가 */
+}
+
+.commentTextXC {
+  margin-bottom: 5px; /* 댓글 텍스트와 다음 댓글 사이의 간격 설정 */
+}
+
+
+
+.closeXC {
+	margin-left:70%;
+	font-size: 50px;
+}
+}

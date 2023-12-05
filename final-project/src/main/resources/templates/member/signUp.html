@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원가입 페이지</title>
+    
+    <link rel="stylesheet" th:href="@{/css/member/signUp.css}">
+    
+</head>
+<body>
+    <div id="logos">
+        <img id="logo" th:src="@{/images/20231114115318_93362.png}">
+        <span id="name">Surfing</span>
+    </div>
+
+    <div id="titleBox">
+        <span id="pageTitle">회원가입</span>
+    </div>
+    
+    <div class="idPw">
+        <p >아이디/비밀번호</p>
+    </div>
+
+     <form th:action="@{/member/signUp}" method="POST" name="signUpFrm" id="signUpFrm">
+
+    <dl id="idPwBox">
+
+        <div id="inputIdBox">
+            <input type="text" id="inputId" placeholder="아이디" name="memberId">
+            <button id="duplicateBtn" type="button"> 중복 확인</button>
+        </div>
+        
+        
+		<h6 id="idCheck"></h6>
+		
+    
+        <div id="inputPwBox">
+            <input type="password" id="inputPw" placeholder="비밀번호" name="memberPw">
+            <button type="button" id="btnShowHide"></button>
+        </div>
+      
+      	<h6 id="pwCheck"></h6>
+       
+        <div id="inputPw2Box">
+            <input type="password" id="inputPwConfirm" placeholder="비밀번호 확인" name="memberPwConfirm">
+        </div>
+        
+        <h6 id="pwConfirmCheck"></h6>
+       
+    </dl>
+
+    <div class="profile">
+        <p>개인정보</p>
+    </div>
+
+    <dl id="profileBox">
+        <div id="inputNameBox">
+            <input type="text" id="inputName" placeholder="이름" name="memberName">
+        </div>
+        
+        <h6 id="nameCheck"></h6>
+
+        <div id="inputNameBox">
+            <input type="text" id="inputNickname" placeholder="닉네임" name="memberNickname">
+        </div>
+        
+        <h6 id="nicknameCheck"></h6>
+
+        <div id="inputNameBox">
+            <input type="text" id="inputTel" placeholder="전화번호" name="memberTel">
+        </div>
+        
+        <h6 id="telCheck"></h6>
+
+        <div id="inputNameBox">
+            <input type="date" id="inputBirth" placeholder="생년월일" name="memberBirth">
+        </div>
+        
+        <h6 id="birthCheck"></h6>
+
+        <div id="inputNameBox">
+            <input type="text" id="inputEmail" placeholder="이메일" name="memberEmail">
+            <button type="button" id="pushAuthBtn">인증번호 발송</button>
+        </div>
+        
+        <h6 id="emailCheck"></h6>
+
+        <div id="inputNameBox">
+            <input type="text" id="authKey" placeholder="인증번호" name="authKey">
+            <button type="button" id="authBtn">인증번호 확인</button>
+        </div>
+        
+        <h6 id="authCheck"></h6>
+        
+    </dl>
+
+    <div id="signUpBtnBox">
+        <button id="signUpBtn" type="submit">회원가입</button>
+    </div>
+ 
+ 	</form>
+ 	
+ 	<script th:src="@{/js/member/signUp.js}"></script>
+</body>
+</html>

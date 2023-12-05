@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="team.gsk.project.mypage.model.dao.MyPageMapper">
+	
+	<resultMap type="Member" id="member_rm">
+		<id property="memberNo" column="MEMBER_NO" />
+		<result property="memberId" column="MEMBER_ID" />
+		<result property="memberPw" column="MEMBER_PW" />
+		<result property="memberName" column="MEMBER_NAME" />
+		<result property="memberTel" column="MEMBER_PHONE" />
+		<result property="memberNickname" column="MEMBER_NICKNAME" />
+		<result property="memberIntro" column="MEMBER_INTRO" />
+		<result property="profileImage" column="MEMBER_PROFILE" />		
+		<result property="coverImage" column="MEMBER_COVER_IMG" />		
+		<result property="enrollDate" column="MEMBER_ENROLL_DATE" />
+		<result property="deleteFlag" column="MEMBER_DELETE_FLAG" />
+		<result property="authority" column="AUTHORITY" />
+		<result property="memberEmail" column="MEMBER_EMAIL" />
+		<result property="memberBirth" column="MEMBER_BIRTH" />
+	</resultMap>
+	
+	
+	
+		<!-- 회원 프로필 이미지 수정 -->
+	<update id="updateProfileImage">
+		UPDATE "MEMBER" SET
+		MEMBER_PROFILE = #{profileImage}
+		WHERE MEMBER_NO = #{memberNo}
+	</update>
+	
+	<select id="mainProfile" parameterType="_int" resultType="string">
+		SELECT * FROM "MEMBER" WHERE MEMBER_NO = #{memberNo}
+	</select>
+	
+	
+	<!-- 비밀번호 조회 -->
+	<select id="selectEncPw" parameterType="_int" resultType="string">
+		SELECT MEMBER_PW FROM "MEMBER" WHERE MEMBER_NO = #{memberNo}
+	</select>
+	
+	<!-- 비밀번호 변경 -->
+	<!-- Member : 사용자 지정 별칭 (mybatis-config.xml) -->
+	<update id="changePw" parameterType="Member">
+		UPDATE "MEMBER" SET
+		MEMBER_PW = #{memberPw}
+		WHERE MEMBER_NO = #{memberNo}
+	</update>
+	
+	<!-- 회원 정보 수정 -->
+	<update id="updateNickname" parameterType="Member">
+		UPDATE "MEMBER" SET
+		MEMBER_NICKNAME = #{memberNickname}
+		WHERE MEMBER_NO = #{memberNo}
+	</update>
+	
+	<!-- 회원 탈퇴 -->
+	<update id="secession" parameterType="_int">
+		UPDATE "MEMBER" SET
+		MEMBER_DELETE_FLAG = 'Y'
+		WHERE MEMBER_NO = #{memberNo}
+	</update>
+	
+	
+	
+	
+</mapper>

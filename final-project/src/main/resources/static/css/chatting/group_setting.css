@@ -1,0 +1,290 @@
+body{
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+
+
+
+
+    main{
+
+        border: 1px solid white;
+        margin-left: 11%;
+        height: 100%;
+
+    }
+
+
+    /* 태그 선택창 */
+    .tag_container{
+
+        width: 100%;
+        height: 30%;
+        margin-top: 6%;
+
+    }
+
+
+    .tag-chose{
+
+        height: 90%;
+      
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+   
+
+    .tag-title{
+
+        border-bottom: 1px solid black;
+        margin-right: 20%;
+        margin-bottom: 1%;
+        font-weight: bold;
+    }
+
+
+
+    .tag-list{
+
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 10px;
+        width: 30%;
+        height: 30%;
+    }
+
+
+
+
+
+    .tag-li{
+
+        background-color: lightblue;
+        padding: 20px;
+        text-align: center;
+
+
+    }
+
+
+
+    .tag-result{
+
+        height: 10%;
+        display: flex;
+        justify-content: center;
+    }
+
+    #tag-box{
+
+ 
+        width: 20%;
+        height: 30px;
+        background-color: rgba(208, 208, 208, 0.3);
+        border: none;
+    
+
+    }
+
+    .tag-result>button{
+
+        border: none;
+    }
+
+
+    /* 방 선택창 */
+
+    .room_container{
+        width: 100%;
+        height: 70%;
+
+
+    }
+
+
+    .make-room{
+
+        width: 90px;
+        height: 30px;
+        background-color: #9FC29E;
+        border: none;
+        border-radius: 10%;
+        margin-left: 80%;
+        margin-right: 1%;
+    }
+
+
+    .general-room{
+
+        width: 6%;
+        height: 3%;
+        text-align: center;
+
+
+    }
+
+
+
+    .room-main{
+        height: 98%;
+        width: 100%;
+ 
+
+    }
+
+    .room-list{
+        min-height: 100%;
+        background-color: rgba(208, 208, 208, 0.5);
+        list-style: none;
+        padding-top: 2%;
+    
+
+    }
+
+    .room-li{
+        margin: 20px;
+        height: 300px;
+        width: 50%;
+        background-color: white;
+        border-radius: 20px;
+        margin-left: auto;
+        margin-right: auto;
+      
+        display: grid;
+        grid-template: repeat(4,60px)/repeat(4,180px);
+        gap: 10px;
+        padding-left: 5%;
+        padding-top: 1%;
+       
+    }
+
+
+    .room-li div{
+
+        /* border: 1px solid red; */
+        border-radius: 20px
+    }
+
+
+    .room-img{
+
+        grid-row:1/3;
+        /* 첫번째 행에서 1번열에서 2번열까지 합친다는 소리 */
+
+
+    }
+
+
+    .room-img img{
+
+        width: 100%;
+        height:100%;
+        object-fit: cover; /* 이미지가 비율을 유지하면서 요소를 가득 채우도록 함 */
+        border-radius: 20px;
+        opacity: 100%;
+    }
+
+
+      
+     /* 리스트 안 컨텐츠 색깔 */
+    .room-title,.room-headCount,.room-chatNum,.room-tag{
+        background-color: #F0F4FF;
+
+
+    }
+
+
+    .room-title{
+
+        grid-column: 2 / 3; /* 두 번째 열에 위치 */
+        grid-row: 1 / 3; /* 첫 번째 행부터 두 번째 행까지 차지 */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 80%;
+        margin-top: 13%;
+        
+    
+
+     
+    }
+
+
+    .room-headCount{
+
+        
+        width: 50%;
+        height: 50%;
+        margin-top: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 20%;
+        
+
+    }
+
+
+    .room-introduce{
+
+        grid-column: 1/5;
+        grid-row: 3/5;
+        background-color: rgb(217,217,217,0.5);
+        padding: 1%;
+     
+      
+    }
+
+ 
+
+
+    .room-signUp{
+   
+        display: flex;
+        justify-content: end;
+   
+       
+
+    }
+
+    .room-signUp>div{
+
+      height: 40px;
+      width: 80px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: #00ffcb 1px solid;
+
+    }
+  
+
+
+    .room-signUp>button{
+
+        margin-left: 10%;
+        height: 40px;
+        width: 80px;
+        border-radius: 20px;
+        background-color: rgb(97,202,120, 0.3);
+        border: none;
+
+    }
+  
+
+    .room-chatNum,.room-tag{
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+    }
